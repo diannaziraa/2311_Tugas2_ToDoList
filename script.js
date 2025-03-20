@@ -65,11 +65,13 @@ function editTask(button) {
     document.getElementById("editDueDate").value = editRow.cells[4].innerText;
 
     let modal = document.getElementById("editModal");
-    modal.style.display = "flex"; // Pastikan modal tetap fleksibel untuk pusat
-    modal.style.left = "50%";
-    modal.style.top = "50%";
-    modal.style.transform = "translate(-50%, -50%)"; // Pusatkan modal secara horizontal & vertikal
+    modal.style.display = "flex"; // Pastikan modal hanya muncul saat Edit ditekan
 }
+
+// Pastikan modal tidak ditampilkan saat halaman pertama kali dimuat
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("editModal").style.display = "none";
+});
 
 // Fungsi untuk menyimpan perubahan pada tugas
 function saveEditTask() {
