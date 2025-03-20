@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>To-Do List</h1>
+
+    <!-- Form Tambah Tugas -->
+    <div id="taskForm">
+        <input type="text" id="taskName" placeholder="Nama Tugas" required>
+        <select id="taskPriority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+        </select>
+        <input type="date" id="taskStartDate" required>
+        <input type="date" id="taskDueDate" required>
+        <button onclick="addNewTask()">Tambah Tugas</button>
+    </div>
+
+    <!-- Tabel Daftar Tugas -->
+    <table id="taskList">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Task</th>
+                <th>Priority</th>
+                <th>Start Date</th>
+                <th>Due Date</th>
+                <th>Done</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data tugas muncul di sini -->
+        </tbody>
+    </table>
+
+    <!-- Modal Edit -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+            <label>Task Name:</label>
+            <input type="text" id="editTaskName">
+            <label>Priority:</label>
+            <select id="editPriority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <label>Start Date:</label>
+            <input type="date" id="editStartDate">
+            <label>Due Date:</label>
+            <input type="date" id="editDueDate">
+            <button onclick="saveEditTask()">Save</button>
+            <button id="cancelEdit">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Popup Konfirmasi -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <p>Tugas berhasil diperbarui! ✅</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
